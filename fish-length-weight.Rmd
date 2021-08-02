@@ -1,0 +1,90 @@
+---
+title: "Fish Length Weight"
+author: "Wylie Hampson"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+# Big Header
+
+## Medium Header
+
+### Small Header
+
+*Italics*
+
+**BOLD**
+
+sub/superscript^2^~2~
+
+* First bullet point
+  + Sub bullet point
+* Second bullet point
+* Third bullet point
+
+![Smile!](Smiley.png)
+
+Make a function for fish weight.
+```{r}
+fish_weight <- function(a, b, L) {
+  (a * L)^b
+}
+
+```
+
+Use fish_weight to find different fish weights.
+```{r}
+# Milkfish weight
+fish_weight(a = 0.0905, b = 2.52, L = 60)
+
+#Giant trevally weight
+fish_weight(a = 0.0353, b = 3.05, L = 60)
+
+#Giant Barracuda weight
+fish_weight(a = 0.0181, b = 3.27, L = 60)
+```
+
+Make a sequence for fish length.
+```{r}
+# 0 to 200 centimeters by increments of 1cm
+
+fish_length <- seq(from = 0, to = 200, by = 1)
+```
+
+Barracuda weight along length range.
+```{r}
+barracuda_weight <- fish_weight(a = 0.0181, b = 3.27, L = fish_length)
+```
+
+Bind barracuda weights with fish length into a dataframe
+```{r}
+barracuda_df <- data.frame(fish_length, barracuda_weight)
+```
+
+Plot barracuda lengths vs. weights.
+```{r}
+ggplot(data = barracuda_df, mapping = aes(x = fish_length, y = barracuda_weight)) +
+  geom_point() +
+  labs(x = "Barracuda Length (cm)",
+       y = "Barracuda Weight (grams)",
+       title = "Barracuda Expected Weight vs. Length",
+       subtitle = "ooooh barracuda!")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
