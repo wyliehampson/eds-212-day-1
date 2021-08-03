@@ -43,7 +43,7 @@ Use fish_weight to find different fish weights.
 fish_weight(a = 0.0905, b = 2.52, L = 70)
 
 #Giant trevally weight
-fish_weight(a = 0.0353, b = 3.05, L = 60)
+fish_weight(a = 0.0353, b = 3.05, L = 70)
 
 #Giant Barracuda weight
 fish_weight(a = 0.0181, b = 3.27, L = 60)
